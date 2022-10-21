@@ -1,0 +1,15 @@
+
+.change-color { 
+    color: #000000; 
+    border-radius: 40px;
+    padding: 12px 20px;
+    cursor: pointer;
+    grid-area: 1 / 8 / 2 / 9;
+  
+} 
+nav{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 0px;
+  
+}
