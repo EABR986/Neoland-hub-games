@@ -1,29 +1,29 @@
-import { paintLogin } from "../login/login";
 
+import "./style.css";
+import { pokeApiButton } from "../../components/home/pokeApiBtn";
+ import { logoutDiv } from "../../components/home/logoutbtn";
 
 const app = document.querySelector("#app");
-const nav = document.querySelector("nav");
+
 export const paintHub = () => {
   const inputName = localStorage.getItem("username");
   const hubDiv = `
     <div>
         <h1>Bienvenido &#128075  ${inputName} !!!</h1>
     </div>
+    <div class="container-app">
+        <div id="pokemon-api" class="container"><p> POKE API</p>  </div>
+        <div id="tic-tac" class="container"><p> TIC-TAC-TOE</p>  </div>
+        <div id="waka" class="container"><p> WAKA-TOPO</p>  </div>
+        <div id="hangman" class="container"><p> HANG MAN</p>  </div>
+        <div id="quiz" class="container"><p> QUIZ - NEO</p>  </div>
+        <div id="memory" class="container"><p> MEMORY GAME</p>  </div>
+        <div id="to-do" class="container"><p> TO DO LIST</p>  </div>
+        <div id="bigest" class="container"><p> THE BIGEST CARD</p>  </div>
+    </div>
 `;
-  const logoutDiv = () => {
-    const logoutBtn = document.createElement("button");
-    logoutBtn.classList.add("logout-btn");
-    logoutBtn.innerHTML = "Logout &#x1F44C";
-    nav.append(logoutBtn);
 
-    const button = document.querySelector(".logout-btn");
-
-    button.addEventListener("click", (e) => {
-      localStorage.clear();
-      window.alert("You have been logged out");
-      paintLogin();
-    });
-  };
   app.innerHTML = hubDiv;
-  logoutDiv();
+ logoutDiv();
+  pokeApiButton();
 };
